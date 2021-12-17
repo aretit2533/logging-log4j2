@@ -127,7 +127,7 @@ public class DefaultRolloverStrategy extends AbstractRolloverStrategy {
                 minIndex = MIN_WINDOW_SIZE;
                 if (min != null) {
                     minIndex = Integer.parseInt(min);
-                    if (minIndex < 1) {
+                    if (minIndex < 0) {
                         LOGGER.error("Minimum window size too small. Limited to " + MIN_WINDOW_SIZE);
                         minIndex = MIN_WINDOW_SIZE;
                     }
