@@ -1514,6 +1514,7 @@
     <module>log4j-api</module>
     <module>log4j-core-java9</module>
     <module>log4j-core</module>
+    <module>log4j-core-equinox</module>
     <module>log4j-layout-template-json</module>
     <module>log4j-core-its</module>
     <module>log4j-1.2-api</module>
@@ -1524,7 +1525,6 @@
     <module>log4j-flume-ng</module>
     <module>log4j-taglib</module>
     <module>log4j-jmx-gui</module>
-    <module>log4j-samples</module>
     <module>log4j-bom</module>
     <module>log4j-jdbc-dbcp2</module>
     <module>log4j-jpa</module>
