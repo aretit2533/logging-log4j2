@@ -15,7 +15,7 @@
 
 # FROM openjdk:7-alpine
 # Reverted to debian yet alpine does not include jdk9
-FROM openjdk:7-jdk
+FROM openjdk:17-jdk
 
 # Require while jdk9 is unstable on debian
 RUN echo 'deb http://deb.debian.org/debian unstable main' >> /etc/apt/sources.list
