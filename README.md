@@ -3,16 +3,11 @@
 Apache Log4j 2 is an upgrade to Log4j that provides significant improvements over its predecessor, Log4j 1.x,
 and provides many of the improvements available in Logback while fixing some inherent problems in Logback's architecture.
 
-[![Jenkins Status](https://img.shields.io/jenkins/s/https/builds.apache.org/job/Log4j%202.x.svg)](https://builds.apache.org/job/Log4j%202.x/)
-[![Travis Status](https://travis-ci.org/apache/logging-log4j2.svg?branch=master)](https://travis-ci.org/apache/logging-log4j2)
-[![Maven Central](https://img.shields.io/maven-central/v/org.apache.logging.log4j/log4j-api.svg)](http://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api)
-
-
 ## Pull Requests on Github
 
-By sending a pull request you grant the Apache Software Foundation sufficient rights to use and release the submitted 
-work under the Apache license. You grant the same rights (copyright license, patent license, etc.) to the 
-Apache Software Foundation as if you have signed a Contributor License Agreement. For contributions that are 
+By sending a pull request you grant the Apache Software Foundation sufficient rights to use and release the submitted
+work under the Apache license. You grant the same rights (copyright license, patent license, etc.) to the
+Apache Software Foundation as if you have signed a Contributor License Agreement. For contributions that are
 judged to be non-trivial, you will be asked to actually signing a Contributor License Agreement.
 
 ## Usage
@@ -80,20 +75,62 @@ Apache Log4j 2 is distributed under the [Apache License, version 2.0](http://www
 
 [How to download Log4j](http://logging.apache.org/log4j/2.x/download.html),
 and [how to use it from Maven, Ivy and Gradle](http://logging.apache.org/log4j/2.x/maven-artifacts.html).
-You can access the latest development snapshot by using the Maven repository `https://repository.apache.org/snapshots`, 
+You can access the latest development snapshot by using the Maven repository `https://repository.apache.org/snapshots`,
 see [Snapshot builds](https://logging.apache.org/log4j/2.x/maven-artifacts.html#Snapshot_builds).
 
 ## Issue Tracking
 
-Issues, bugs, and feature requests should be submitted to the 
+Issues, bugs, and feature requests should be submitted to the
 [JIRA issue tracking system for this project](https://issues.apache.org/jira/browse/LOG4J2).
 
-Pull request on GitHub are welcome, but please open a ticket in the JIRA issue tracker first, and mention the 
+Pull request on GitHub are welcome, but please open a ticket in the JIRA issue tracker first, and mention the
 JIRA issue in the Pull Request.
 
 ## Building From Source
 
-Log4j requires Apache Maven 3.x. To build from source and install to your local Maven repository, execute the following:
+Log4j requires:
+- Apache Maven 3.x.
+- JDK 8, 9, 11
+
+To build setting setup your local `~/.m2/toolchains.xml`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<toolchains>
+  <!-- JDK toolchains -->
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <version>8</version>
+      <vendor>oracle</vendor>
+    </provides>
+    <configuration>
+      <jdkHome>/path/to/java/8</jdkHome>
+    </configuration>
+  </toolchain>
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <version>9</version>
+      <vendor>oracle</vendor>
+    </provides>
+    <configuration>
+      <jdkHome>/path/to/java/9</jdkHome>
+    </configuration>
+  </toolchain>
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <version>11</version>
+      <vendor>oracle</vendor>
+    </provides>
+    <configuration>
+      <jdkHome>/path/to/java/11</jdkHome>
+    </configuration>
+  </toolchain>
+</toolchains>
+```
+
+To build from source and install to your local Maven repository, execute the following:
 
 ```sh
 mvn install

@@ -16,6 +16,8 @@
  */
 package org.apache.logging.log4j.core.appender;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -308,8 +310,22 @@ public final class RollingFileAppender extends AbstractOutputStreamAppender<Roll
      */
     @Override
     public void append(final LogEvent event) {
+        checkLogFileExist();
         getManager().checkRollover(event);
         super.append(event);
+    }
+
+    private void checkLogFileExist(){
+        File logFile = new File(this.fileName);
+        if (!logFile.exists()) {
+            try {
+                logFile.createNewFile();
+                RollingFileManager rollingFileManager = getManager();
+                rollingFileManager.setOutputStream(rollingFileManager.createOutputStream());
+            } catch (IOException e) {
+                System.out.println("Error while create new log file.");
+            }
+        }
     }
 
     /**
