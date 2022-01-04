@@ -20,7 +20,7 @@
   <artifactId>log4j</artifactId>
   <packaging>pom</packaging>
   <name>Apache Log4j 2</name>
-  <version>2.17.0</version>
+  <version>2.17.1</version>
   <parent>
     <groupId>org.apache.logging</groupId>
     <artifactId>logging-parent</artifactId>
@@ -183,19 +183,18 @@
     <connection>scm:git:https://gitbox.apache.org/repos/asf/logging-log4j2.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/logging-log4j2.git</developerConnection>
     <url>https://gitbox.apache.org/repos/asf?p=logging-log4j2.git</url>
-    <tag>log4j-2.17.0-rc1</tag>
+    <tag>log4j-2.17.1-rc1</tag>
   </scm>
   <properties>
     <!-- make sure to update these for each release! -->
     <repository.url>http://10.138.47.238:8081/repository</repository.url>
     <log4jParentDir>${basedir}</log4jParentDir>
-    <Log4jReleaseVersion>2.17.0</Log4jReleaseVersion>
-    <Log4jReleaseVersionJava7>2.12.2</Log4jReleaseVersionJava7>
-    <Log4jReleaseVersionJava6>2.3</Log4jReleaseVersionJava6>
-    <!--Log4jReleaseManager>Ralph Goers</Log4jReleaseManager-->
-    <!--Log4jReleaseKey>B3D8E1BA</Log4jReleaseKey-->
-    <Log4jReleaseManager>Ralph Goers</Log4jReleaseManager>
-    <Log4jReleaseKey>B3D8E1BA</Log4jReleaseKey>
+    <Log4jReleaseVersion>2.17.1</Log4jReleaseVersion>
+    <Log4jReleaseVersionJava7>2.12.3</Log4jReleaseVersionJava7>
+    <Log4jReleaseVersionJava6>2.3.1</Log4jReleaseVersionJava6>
+    <Log4jReleaseManager>Matt Sicker</Log4jReleaseManager>
+    <Log4jReleaseKey>D7C92B70FA1C814D</Log4jReleaseKey>
+    <Log4jSigningUserName>mattsicker@apache.org</Log4jSigningUserName>
     <!-- note that any properties you want available in velocity templates must not use periods! -->
     <slf4jVersion>1.7.25</slf4jVersion>
     <logbackVersion>1.2.3</logbackVersion>
@@ -245,6 +244,8 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.doap.skip>false</maven.doap.skip>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- See https://maven.apache.org/guides/mini/guide-reproducible-builds.html -->
+    <project.build.outputTimestamp>10</project.build.outputTimestamp>
     <docLabel>Site Documentation</docLabel>
     <projectDir />
     <commonsLoggingVersion>1.2</commonsLoggingVersion>
@@ -1453,7 +1454,7 @@
           <webAccessUrl>${project.scm.url}</webAccessUrl>
           <anonymousConnection>${project.scm.connection}</anonymousConnection>
           <developerConnection>${project.scm.developerConnection}</developerConnection>
-          <scmTag>log4j-${Log4jReleaseVersion}</scmTag>
+          <scmTag>rel/${Log4jReleaseVersion}</scmTag>
         </configuration>
       </plugin>
       <!-- Surefire report -->

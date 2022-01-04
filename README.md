@@ -64,8 +64,10 @@ The Log4j 2 User's Guide is available [here](https://logging.apache.org/log4j/2.
 
 ## Requirements
 
-Log4j 2.4 and greater requires Java 7, versions 2.0-alpha1 to 2.3 required Java 6.
-Some features require optional dependencies; the documentation for these features specifies the dependencies.
+* Java 8 users should use 2.17.0 or greater.
+* Java 7 users should use 2.12.2.
+* Java 6 users should use 2.3.
+* Some features require optional dependencies; the documentation for these features specifies the dependencies.
 
 ## License
 
